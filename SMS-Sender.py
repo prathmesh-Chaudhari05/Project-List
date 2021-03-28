@@ -1,3 +1,3 @@
 import time
-print('Sleep')
+print('Sleep.')
 print('Hello World')
