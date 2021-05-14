@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Font-Awsome-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Google Icons-->
+    <title>Hello, world!</title>
+</head>
+<style>
+    .btn-outline-success.hover {
+        /* color: #198754; */
+        border-color: #1b1987;
+    }
+
+    li.nav-item {
+        text-align: right;
+    }
+
+    #navbarSupportedContent a:hover {
+        color: white;
+    }
+
+    #navbarSupportedContent.active {
+        border-bottom: white 3px;
+    }
+    .btn-outline-primary{
+        color: #202020;
+        border-color: #202020;
+    }
+    .btn-outline-primary .hover{
+        background-color: #202020;
+        color: white;
+        /* border-color: ; */
+    }
+</style>
+
+<body>
+    <div style="padding: 10px; ">
+        <!-- <nav class="navbar navbar-dark bg-primary" style="background-color: #47a7ec; color: white;">
+        </nav> -->
+        <!-- <center> -->
+
+        <nav class="navbar navbar-expand-lg navbar-light navbar-dark-active-color; "
+            style="background-color: #3ee4c0; color: white; ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="C:\Users\pc\Pictures\Saved Pictures\Youtube\Daily-Dose-Movie-YT-noBG.png" width="30" height="30">
+                    <!-- <h5>Logo</h5> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!--d-flex justify-content-center-->
+                    <ul class="navbar-nav m-0">
+                        <!--me-auto mb-2 m-sm-0-->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><button class="btn btn-primary">Home</button></a>
+                            <!--Voice Assistant-->
+                        </li>
+
+                        <li class="nav-item">
+                            <form action="/command" method="POST">
+                                <a class="nav-link" href="/command"><button class="btn btn-outline-primary">Command</button></a>
+                            </form>
+                            <!--What Commands can be used ?-->
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#About-Us"><b>About Us</b></a>
+                            <!--Project Group Info-->
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <marquee
+            style="background-color: #2283bb; color : white; font-family: Arial, Helvetica, sans-serif; font-size:small; padding: 4px 4px 5px 4px;">
+            Latest Update 0.4 || Update List -> New Commands added Wikipedia, Weather Forcast, Keyword Search
+        </marquee>
+
+        <div style="text-align: center;">
+            <h2 style="font-family: Helvetica, Arial; font-weight: 600;">Welcome {{userName}} !!</h2>
+            <!--Retrive username from demoApp.py and display in for both user commands and computer return statement-->
+            <!-- <h3>Welcome to Futuristic Voice Assistant that helps you minimal your </h3> -->
+            <form action="." method=POST>
+                <!--Start Button to trigger takeCommand() -->
+                <div>
+                    
+                    <a href="#">
+                        <button class="btn btn-primary " style="padding: .375rem 1rem;">
+                            <span class="material-icons"> mic </span>
+                            Start
+                        </button>
+                    </a>
+                </div>
+            </form>
+
+            <!-- <p>Welcome From Python {{userName}} </p> -->
+
+            <!-- <form action="/command" method="POST">
+                    <a href='/command'><button>Commands</button></a>
+                </form> -->
+            <br>
+            <h4><b>--Output--</b></h4>
+            <div>
+              <b><u>User Said</u> : <i>{{user}}</i></b><br><br>
+                <b><u>Computer Said</u> : <i>{{comp}}</i></b>
+            </div>
+        </div>
+        <!-- </center> -->
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+    </div>
+</body>
+
+</html>
