@@ -3,10 +3,16 @@ from demoAI import *
 from pyttsx3 import *
 
 app = Flask(__name__)
+eng = Engine('sapi5')
+eng.setProperty('voice', e1.getProperty('voices')[0].id)
+
 
 @app.route('/')     #default Page
 def demoFun():
-    return render_template('demoFlask.html', userName = "Prathmesh")
+    speak("Please Tell Your Name")
+    name = takeCommand()
+    speak(greet(name))
+    return render_template('demoFlask.html', userName = "name")
 
 @app.route('/', methods = ['POST'])     #once input form gets triggered this page will be loaded...
 def newdemoFun():
@@ -16,7 +22,7 @@ def newdemoFun():
     y = working(x)              #what Voice Assistant Said
     speak(y)
     
-    return render_template('demoFlask.html', comp = y, user = x.title())  
+    return render_template('demoFlask.html', comp = y, user = x.title())
 
 
 

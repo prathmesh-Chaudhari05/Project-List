@@ -18,6 +18,17 @@ def speak(audio):
     e1.say(audio)
     e1.runAndWait()
 
+def greet(name):
+    getTime = datetime.datetime.now().hour
+    if getTime>=0 and getTime<12:
+        return f"Good Morning {name}"
+
+    elif getTime>=12 and getTime<18:
+        return f"Good Afternoon {name}" 
+
+    else:
+        return f"Good Evening {name}"
+
 def takeCommand():
     #It takes microphone input from the user and returns string output
 
@@ -43,9 +54,9 @@ def takeCommand():
 def working(query):
 
     if 'time' in query:   #Test Status : Working
-        strTime = datetime.datetime.now().hour
+        strTime = datetime.datetime.now().strftime("%H hours %M minute")
         # speak(f"Sir the time is {strTime}")
-        return f"Sir the time is {strTime} o clock"
+        return f"Sir the time is {strTime}"
 
     elif 'date' in query:
         Year = datetime.datetime.now().date().year
@@ -68,12 +79,21 @@ def working(query):
                 # print(results)
                 # speak(results)
                 return f"According to Wikipedia. {results}"
+                
 
             except wikipedia.wikipedia.WikipediaException as e:
                 return f"The Term \"{query}\" may refer to one or more similar terms. Please Describe it more specifically."
     elif "open youtube" in query:
         webbrowser.open("www.youtube.com")
-        return f"Opening Youtube.com Hold a second"
+        return f"Opening Youtube.com please Hold a second"
+    
+    elif "open stack overflow" in query:
+        webbrowser.open("www.stackoverflow.com")
+        return f"Opening stackoverflow.com please Hold a second"
+
+    elif (query.split('for ')[0]) == 'search ' in query:    #query = Search for <keyword / s>
+            keyWord = query.split('for ')[1]
+            webbrowser.open('https://www.google.com/search?q='+keyWord)
 
     else:
         return "Sorry I didn't get that \n I'm Still learning new stuff"
