@@ -257,6 +257,23 @@
     .social-network a {
         background-color: #F9F9F9;
     }
+/* ----------------- GLOWING TEXT EFFECT ----------------------- */
+    .glow {
+        font-size: 30px;
+        color: #fff;
+        text-align: center;
+        animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes glow {
+        from {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00e6ad, 0 0 20px #00e6ad, 0 0 25px #00e6ad, 0 0 30px #00e6ad, 0 0 35px #00e6ad;
+        }
+
+        to {
+            text-shadow: 0 0 10px #fff, 0 0 15px #f52a2a, 0 0 20px #f52a2a, 0 0 25px #f52a2a, 0 0 30px #f52a2a, 0 0 35px #f52a2a, 0 0 40px #f52a2a;
+        }
+    }
 </style>
 
 <body>
@@ -269,7 +286,8 @@
             style="background-color: #ffc93c; color: white; ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="C:\Users\pc\Downloads\Website-Logo.png" width="55" height="40">
+                    <img src="C:\Users\pc\Desktop\pythonPrathmesh\Flask-Practical\static\Daily-Dose-Movie-YT-noBG.png"
+                        width="55" height="40">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -337,7 +355,7 @@
             </form>
 
             <br>
-            <h4><b># OUTPUT #</b></h4>
+            <p class="glow">Result</p>
             <div>
                 <b><u>User Said</u> : <i>{{user}}</i></b><br><br>
                 <b><u>Computer Said</u> : <i>{{comp}}</i></b>
@@ -355,7 +373,7 @@
         <div class="footer-middle">
             <div class="container">
                 <div class="row-3" style="padding-bottom: 15px; padding-top: -20px;">
-                    <h4>Follow Us</h4>
+                    <h4 style="display: inline-block;">Follow Us</h4>
                     <ul class="social-network social-circle">
                         <li><a href="https://www.facebook.com/prathmeshchaudhari05/" class="icoFacebook"
                                 title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -363,6 +381,9 @@
                                 title="Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="https://www.instagram.com/prathmesh_chaudhari05/" class="icoInstagram"
                                 title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li><a href="https://github.com/prathmesh-Chaudhari05" class="icoGitHib" title="GitHub"
+                                target="_blank"><i class="fa fa-github"></i></a>
                         </li>
                     </ul>
                 </div>
