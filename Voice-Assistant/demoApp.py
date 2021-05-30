@@ -8,11 +8,12 @@ eng.setProperty('voice', e1.getProperty('voices')[0].id)
 
 
 @app.route('/')     #default Page
-def demoFun():
+def demoFun():  
+    #add if-else statement to collect the username
     speak("Please Tell Your Name")
-    name = takeCommand()
-    speak(greet(name))
-    return render_template('demoFlask.html', userName = "name")
+    name = 'takeCommand()'
+    speak(greet(name))      #greeting the user at start
+    return render_template('demoFlask.html', userName = name)
 
 @app.route('/', methods = ['POST'])     #once input form gets triggered this page will be loaded...
 def newdemoFun():
@@ -25,10 +26,13 @@ def newdemoFun():
     return render_template('demoFlask.html', comp = y, user = x.title())
 
 
-
-@app.route('/command', methods = ['POST'])
+@app.route('/command', methods = ['POST'])      #to open the commands page
 def commandPage():
-    return render_template('demoCommands.html', commandName = "x")
+    return render_template('demoCommands.html', commandName = "demo")
+
+@app.route('/aboutus', methods = ['POST'])      #to open the commands page
+def aboutusPage():
+    return render_template('demoAboutUs.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
