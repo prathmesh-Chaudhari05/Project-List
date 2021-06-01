@@ -4,16 +4,17 @@ from pyttsx3 import *
 
 app = Flask(__name__)
 eng = Engine('sapi5')
-eng.setProperty('voice', e1.getProperty('voices')[0].id)
+eng.setProperty('voice', eng.getProperty('voices')[0].id)
 
+global nm
 
 @app.route('/')     #default Page
 def demoFun():  
     #add if-else statement to collect the username
-    speak("Please Tell Your Name")
-    name = 'takeCommand()'
-    speak(greet(name))      #greeting the user at start
-    return render_template('demoFlask.html', userName = name)
+    # speak("Please Tell Your Name")
+    # nm = takeCommand()
+    speak(greet("Sir"))      #greeting the user at start
+    return render_template('demoFlask.html', userName = "Sir")
 
 @app.route('/', methods = ['POST'])     #once input form gets triggered this page will be loaded...
 def newdemoFun():
