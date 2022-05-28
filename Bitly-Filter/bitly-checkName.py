@@ -6,7 +6,6 @@ from urllib.request import urlopen
 
 
 f1 = open(r"C:\Users\pc\Desktop\pythonPrathmesh\Project-List\Bitly-Filter\Description.txt", mode='r+')
-# print(f1.read())
 
 driver = webdriver.Chrome()
 newSym = "+"
